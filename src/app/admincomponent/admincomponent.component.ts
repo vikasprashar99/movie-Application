@@ -68,21 +68,20 @@ export class AdmincomponentComponent implements OnInit {
 
   onSelect(event) {
     this.orderarray = [];
-
     date_time = event;
-    console.log(
-      date_time.getDate() +
-        "-" +
-        date_time.getMonth() +
-        "-" +
-        date_time.getFullYear()
-    );
+    // console.log(
+    //   date_time.getDate() +
+    //     "-" +
+    //     date_time.getMonth() +
+    //     "-" +
+    //     date_time.getFullYear()
+    // );
     this.date =
       date_time.getFullYear() +
       "-" +
       this.MonthfunCalendar() +
       "-" +
-      date_time.getDate();
+      this.clickday();
     this.orders.getOrderData().subscribe((result: any) => {
       console.log(result);
       for (const i in result) {
@@ -103,6 +102,17 @@ export class AdmincomponentComponent implements OnInit {
   constructor(private route: Router, private orders: OrderService) {
     // const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1));
   }
+  public clickday() {
+    if (Number(date_time.getDate()) < 10) {
+      return "0" + Number(date_time.getDate());
+    } else return Number(date_time.getDate());
+  }
+  public dayfunc() {
+    if (Number(this.currentDate.getDate()) < 10) {
+      return "0" + Number(this.currentDate.getDate());
+    } else return Number(this.currentDate.getDate());
+  }
+
   public Monthfunc() {
     if (Number(this.currentDate.getMonth() + 1) < 10) {
       return "0" + Number(this.currentDate.getMonth() + 1);
@@ -117,21 +127,21 @@ export class AdmincomponentComponent implements OnInit {
       "-" +
       this.Monthfunc() +
       "-" +
-      this.currentDate.getDate();
-
+      this.dayfunc();
+    console.log(this.date);
     this.orders.getOrderData().subscribe((result: any) => {
       for (const i in result) {
-        if (result[i].OrderStatus == "processing") {
-          if (result[i].OrderTime.split(" ")[0] == this.date) {
-            const ob = new order();
-            ob.name = result[i].username;
-            ob.id = result[i].OrderNumber;
-            ob.time = result[i].OrderTime.split(" ")[1].slice(1, 5);
-            ob.orderstatus = result[i].OrderStatus;
-            this.orderarray.push(ob);
-          }
+        // if (result[i].OrderStatus == "processing") {
+        if (result[i].OrderTime.split(" ")[0] == this.date) {
+          const ob = new order();
+          ob.name = result[i].username;
+          ob.id = result[i].OrderNumber;
+          ob.time = result[i].OrderTime.split(" ")[1].slice(1, 5);
+          ob.orderstatus = result[i].OrderStatus;
+          this.orderarray.push(ob);
         }
       }
+      // }
     });
   }
   manageVenue() {
