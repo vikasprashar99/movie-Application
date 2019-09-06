@@ -1,4 +1,4 @@
-<h1 align="center" class="heading">WELCOME TO ORDERS SECTION</h1>
+<h1 align="center" class="heading">WELCOME TO Booking Module</h1>
 
 <div class="parent">
   <div class="child1">
@@ -57,13 +57,13 @@
       </table>
 
       <br />
-      <!-- <mat-slide-toggle (click)="outfordelivery()">
-        Out for delivery
-      </mat-slide-toggle> -->
-      <mat-checkbox (click)="outfordelivery()" *ngIf="showOutForDeliveryButton"
-        >Out for delivery</mat-checkbox
+      <button
+        (click)="outfordelivery()"
+        *ngIf="showOutForDeliveryButton"
+        [disabled]="delivery"
       >
-
+        > Out for delivery
+      </button>
       <div class="child3" id="amount" style="display:none">
         <form [formGroup]="myform">
           <mat-form-field class="example-full-width">

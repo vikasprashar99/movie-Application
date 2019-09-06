@@ -52,6 +52,9 @@ export class AdmincomponentComponent implements OnInit {
   allorderdetails = true;
   checked = false;
   flag;
+  status;
+  delievery = false;
+  button = false;
 
   myform = new FormGroup({
     payment: new FormControl("", [Validators.required])
@@ -140,9 +143,17 @@ export class AdmincomponentComponent implements OnInit {
   orderDetails(selected: any) {
     this.orderlist = [];
     // this.showOutForDeliveryButton = false;
-
+    console.log(selected.orderstatus);
     this.showModal = true;
     this.showOutForDeliveryButton = true;
+    if (selected.orderstatus == "Out for Delivery") {
+      this.delievery = true;
+      console.log("Hi2");
+      document.getElementById("amount").style.display = "block";
+
+      this.button = true;
+      // document.getElementById("amount").style.display = "block";
+    }
 
     this.orders.getOrderData().subscribe((result: any) => {
       for (const e in result) {
@@ -150,7 +161,6 @@ export class AdmincomponentComponent implements OnInit {
           variable = selected.id;
           for (const i in result[e].OrderList) {
             const ob = new OrderList();
-
             ob.itemName = result[e].OrderList[i].itemName;
             ob.pricePerKg = result[e].OrderList[i].pricePerKg;
             ob.quantity = result[e].OrderList[i].quantity;
@@ -177,11 +187,12 @@ export class AdmincomponentComponent implements OnInit {
       }
       if (this.flag == 1) {
         document.getElementById("amount").style.display = "block";
+        // console.log(this.STATUS);
       }
     });
 
     this.orders.postOrderData(variable).subscribe((result: any) => {
-      console.log(result);
+      console.log(result.OrderStatus);
     });
   }
   delivery(selected: any) {
