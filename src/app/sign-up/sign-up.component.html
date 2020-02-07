@@ -1,0 +1,41 @@
+<!-- header -->
+<mat-toolbar
+  class="top-level-header"
+  fullscreen
+>
+</mat-toolbar>
+
+<!-- Signup form -->
+<div class="main-container" >
+    <mat-card class="sub-container">
+        <div fxLayout="column" fxLayoutAlign="center center" >
+            <mat-form-field class="form-field">
+            <input matInput placeholder="Full Name" required>
+          </mat-form-field><br>
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="form-field">
+            <input matInput  maxlength="8"  placeholder="Password" [type]="hide ? 'password' : 'text'" [formControl]="password"
+            required>
+            <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{
+              hide ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>            
+          <mat-hint align="end">{{password.value.length}} / 8</mat-hint>
+          <mat-hint>Atleast 8 character long. Must have an uppercase letter and an integer</mat-hint>
+          </mat-form-field><br><br>
+          <button mat-raised-button color="primary">Submit</button>
+
+        </div>
+  </mat-card>
+</div>

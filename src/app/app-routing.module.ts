@@ -1,21 +1,20 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AdmincomponentComponent } from "./admincomponent/admincomponent.component";
-import { RequestsComponent } from "./requests/requests.component";
-import { OrderDetailscomponentComponent } from "./order-detailscomponent/order-detailscomponent.component";
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 
 const routes: Routes = [
-  { path: "", redirectTo: "adminpage", pathMatch: "full" },
-  { path: "adminpage", component: AdmincomponentComponent },
+  { path: "", redirectTo: "SignUpComponent", pathMatch: "full" },
+  { path: "", component: SignUpComponent },
 
-  {
-    path: "requests",
-    component: RequestsComponent
-  },
-  {
-    path: "orderdetails",
-    component: OrderDetailscomponentComponent
-  }
+//   {
+//     path: "requests",
+//     component: RequestsComponent
+//   },
+//   {
+//     path: "orderdetails",
+//     component: OrderDetailscomponentComponent
+//   }
 ];
 
 @NgModule({

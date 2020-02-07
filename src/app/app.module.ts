@@ -8,7 +8,6 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
-import { AdmincomponentComponent } from "./admincomponent/admincomponent.component";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -22,19 +21,19 @@ import {
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { RequestsComponent } from "./requests/requests.component";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { MatMenuModule } from "@angular/material/menu";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { OrderDetailscomponentComponent } from "./order-detailscomponent/order-detailscomponent.component";
+import {MatGridListModule} from '@angular/material/grid-list';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {MatListModule} from '@angular/material/list'
+import {MatToolbarModule} from '@angular/material/toolbar'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdmincomponentComponent,
-    RequestsComponent,
-    OrderDetailscomponentComponent
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +41,7 @@ import { OrderDetailscomponentComponent } from "./order-detailscomponent/order-d
     BrowserAnimationsModule,
     MatButtonModule,
     MatTooltipModule,
+    MatListModule,
     MatIconModule,
     HttpClientModule,
     MatCheckboxModule,
@@ -54,12 +54,14 @@ import { OrderDetailscomponentComponent } from "./order-detailscomponent/order-d
     MatSlideToggleModule,
     FormsModule,
     MatInputModule,
+    MatToolbarModule,
     MatNativeDateModule,
 
     // FlexLayoutModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
