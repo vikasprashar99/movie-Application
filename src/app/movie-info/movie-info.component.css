@@ -1,0 +1,18 @@
+/* header */
+  
+.top-level-header {
+    position: fixed;
+    top: 0;
+    margin:0;
+    left: 0;
+    height: 40px;
+background-color: goldenrod;    
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-chip.mat-standard-chip {
+    background-color: #fffdfd !important;
+    color: rgba(0,0,0,.87);
+
+}

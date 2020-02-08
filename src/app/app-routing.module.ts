@@ -2,19 +2,20 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MovieslistComponent } from './movieslist/movieslist.component'; 
+import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "SignUpComponent", pathMatch: "full" },
-  { path: "", component: SignUpComponent },
+  { path: "Signup", redirectTo: "SignUpComponent", pathMatch: "full" },
+  { path: "Signup", component: SignUpComponent },
   {
     path: "Movies",
     component: MovieslistComponent
   },
-//   {
-//     path: "orderdetails",
-//     component: OrderDetailscomponentComponent
-//   }
+  {
+    path: "Movieinfo",
+    component: MovieInfoComponent
+  }
 ];
 
 @NgModule({

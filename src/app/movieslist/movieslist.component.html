@@ -1,18 +1,21 @@
+<!-- Header -->
 <div fxLayout="column" style="overflow: auto;">
     <div>
     <mat-toolbar color="primary"  class="top-level-header" fullscreen>
     <mat-toolbar-row>
       <span class="example-spacer"></span>
-      <mat-chip-list aria-label="Fish selection">
-        <mat-chip mat-raised-button>Logout</mat-chip>
+      <mat-chip-list aria-label="Fish selection" >
+        <mat-chip mat-raised-button (click)="Logout()" style="cursor: pointer;">Logout</mat-chip>
       </mat-chip-list>   
      </mat-toolbar-row>
   </mat-toolbar>
 </div>
+<!-- SUB header -->
 <div>
   <mat-toolbar class="sub-header">
     <span class="example-spacer2"></span>
-   <input type="text" class="Searchbox" placeholder="Search">
+   <input type="text" class="Searchbox" placeholder="Search" [(ngModel)]="term"
+   >
 </mat-toolbar>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px" class="Sort">
@@ -21,13 +24,16 @@
 <mat-chip class="sortRows">By year</mat-chip>
 <mat-chip class="sortRows">By rating</mat-chip>
 </div>
-<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px" class="MovieLists">
-    <mat-card *ngFor="let cards of a | slice:0:9;" class="MovieCards">
+<!-- MovieCards -->
+<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" class="MovieLists" >
+    <mat-card *ngFor="let cards of a | slice:0:9| filter: term;" class="MovieCards" (click)="movieInfo()">
+      <div fxLayout="row" fxLayoutAlign="space-between end" style="margin-top: 50%;">
+        <p>{{cards.MovieName}}</p>
+      <p>{{cards.StarRating}}</p>
+    </div>
     </mat-card>
-</div><br>
-<div class="LoadmoreButton" align="center">
-<button (click)="loadmoreMovies(cards)">Load more</button>
-</div>
+</div><br><br>
+<button (click)="loadmoreMovies(cards)" style="width: 100px;" fxFlexAlign="center">Load more</button>
 </div>
 
 

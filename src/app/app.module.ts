@@ -18,6 +18,7 @@ import {
   MatNativeDateModule,
   MatIconModule
 } from "@angular/material";
+
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSelectModule } from "@angular/material/select";
@@ -31,6 +32,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MovieslistComponent } from './movieslist/movieslist.component'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatChipsModule} from '@angular/material/chips';
+import {StarRatingModule} from 'angular-star-rating';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 
 @NgModule({
@@ -38,6 +43,7 @@ import {MatChipsModule} from '@angular/material/chips';
     AppComponent,
     SignUpComponent,
     MovieslistComponent,
+    MovieInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,14 +53,16 @@ import {MatChipsModule} from '@angular/material/chips';
     MatTooltipModule,
     MatListModule,
     MatChipsModule,
+    NgbModule,
     MatIconModule,
     HttpClientModule,
     MatCheckboxModule,
     MatSelectModule,
     MatMenuModule,
     MatExpansionModule,
-    MatDatepickerModule,
+    StarRatingModule.forRoot() ,   MatDatepickerModule,
     MatCardModule,
+    Ng2SearchPipeModule,
     MatFormFieldModule,
     MatSlideToggleModule,
     FormsModule,
