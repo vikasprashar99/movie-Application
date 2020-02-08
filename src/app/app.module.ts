@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -19,7 +19,6 @@ import {
   MatIconModule
 } from "@angular/material";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
@@ -28,20 +27,26 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {MatListModule} from '@angular/material/list'
-import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MovieslistComponent } from './movieslist/movieslist.component'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
+    MovieslistComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
+    MatButtonModule,MatSnackBarModule,
     MatTooltipModule,
     MatListModule,
+    MatChipsModule,
     MatIconModule,
     HttpClientModule,
     MatCheckboxModule,
@@ -56,8 +61,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatInputModule,
     MatToolbarModule,
     MatNativeDateModule,
-
-    // FlexLayoutModule,
+    FlexLayoutModule,
     MatPaginatorModule,
     ReactiveFormsModule,
     MatTableModule,

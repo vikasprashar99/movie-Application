@@ -26,8 +26,7 @@ background-color: goldenrod;
     transform: translate(-50%, -50%);
     width: 30%;
   }
- 
-.form-field {
-    width: 100%;
+  .form-field{
+      width: 100%;
   }
  

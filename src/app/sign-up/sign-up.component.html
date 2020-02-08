@@ -4,13 +4,15 @@
   fullscreen
 >
 </mat-toolbar>
-
 <!-- Signup form -->
 <div class="main-container" >
     <mat-card class="sub-container">
-        <div fxLayout="column" fxLayoutAlign="center center" >
+        <div  >
+          <form (ngSubmit)="onSubmit()">
             <mat-form-field class="form-field">
-            <input matInput placeholder="Full Name" required>
+            <input matInput placeholder="Full Name" onkeydown="return /[a-z]/i.test(event.key)" [formControl]="fullname"
+            required>
+            <mat-error>This field is required</mat-error>
           </mat-form-field><br>
           <mat-form-field class="form-field">
             <input matInput placeholder="Enter your email" [formControl]="email" required>
@@ -33,9 +35,10 @@
           </button>            
           <mat-hint align="end">{{password.value.length}} / 8</mat-hint>
           <mat-hint>Atleast 8 character long. Must have an uppercase letter and an integer</mat-hint>
+          <mat-error>this field is required</mat-error>
           </mat-form-field><br><br>
-          <button mat-raised-button color="primary">Submit</button>
-
+          <button mat-raised-button color="primary" type="submit" class="btn btn-primary" >Submit</button>
+        </form>
         </div>
   </mat-card>
 </div>
