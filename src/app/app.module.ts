@@ -36,6 +36,7 @@ import {StarRatingModule} from 'angular-star-rating';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -60,7 +61,9 @@ import { MovieInfoComponent } from './movie-info/movie-info.component';
     MatSelectModule,
     MatMenuModule,
     MatExpansionModule,
-    StarRatingModule.forRoot() ,   MatDatepickerModule,
+    StarRatingModule.forRoot() ,  
+    MDBBootstrapModule.forRoot(),    
+    MatDatepickerModule,
     MatCardModule,
     Ng2SearchPipeModule,
     MatFormFieldModule,

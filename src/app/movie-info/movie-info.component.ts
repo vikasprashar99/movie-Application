@@ -65,13 +65,26 @@ export class MovieInfoComponent implements OnInit {
   Ratingsvar;
   constructor(private router:Router,config: NgbRatingConfig, private Movieservice: MovieserviceService) {
     config.max = 5;
+    config.readonly = true;
    }
 
   ngOnInit() {
+    // TO GET THE DETAILS OF SLECTED MOVIE CARD
 this.Movienamevar=this.Movieservice.moviename
 this.Ratingsvar=this.Movieservice.Rating;
-    console.log(this.Movieservice.moviename,this.Movieservice.Rating)
+this.slides = this.chunk(this.a, 3);
+}
+// FOR carousel
+  slides: any = [[]];
+  chunk(arr, chunkSize) {
+    let R = [];
+    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
+    }
+    return R;
   }
+
+  // NAVIGATING BUTTONS
   back(){
     this.router.navigate(['/Movies'])
   }

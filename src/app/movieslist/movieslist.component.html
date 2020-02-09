@@ -26,8 +26,10 @@
 </div>
 <!-- MovieCards -->
 <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" class="MovieLists" >
-    <mat-card *ngFor="let cards of Moviesvar | slice:0:9| filter: term;" class="MovieCards" (click)="movieInfo(cards)">
-      <div fxLayout="row" fxLayoutAlign="space-between end" style="margin-top: 50%;">
+    <mat-card *ngFor="let cards of Moviesvar | slice:0:9| filter: term;" class="MovieCards" (click)="movieInfo(cards)" style="padding:0">
+      <mat-card-header  class="Cardheader">
+      </mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="space-between end" >
         <p>{{cards.MovieName}}</p>
       <div style="margin-bottom:15px;">
   <ngb-rating [(rate)]="currentRate"></ngb-rating>

@@ -1,5 +1,5 @@
 <!-- Header -->
-<div fxLayout="column" style="overflow: auto;">
+<div fxLayout="column">
   <div>
     <mat-toolbar color="primary" class="top-level-header" fullscreen>
       <mat-toolbar-row>
@@ -20,47 +20,38 @@
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-
-  <!-- <marquee>
-  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px" >
-    <mat-card *ngFor="let cards of a " class="MovieCards" (click)="movieInfo()">
-      <div fxLayout="row" fxLayoutAlign="space-between end" style="margin-top: 50%;">
-        <p>{{cards.MovieName}}</p>
-      <div style="margin-bottom:15px;">
-  <ngb-rating [(rate)]="currentRate"></ngb-rating>
-
-    </div>
-    </div>
-    </mat-card>
-</div>
-</marquee> -->
-  <div class="marquee">
-    <div class="track">
-      <div
-        class="content"
-        style="  font-size: 144px;
-    "
-      >
-        &nbsp;Infinite Marquee 
+<div>
+  <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+  [animation]="'slide'">
+  <mdb-carousel-item *ngFor="let item of a; let i = index">
+      <div  fxLayoutGap="20px" class="MovieLists" fxLayout="row">
+      <mat-card class="Carasoulcards"  style="padding:0" *ngFor="let card of a; let cardIndex = index">
+        <mat-card-header  class="CarasoulCardheader">
+        </mat-card-header>
+        <div fxLayout="row" fxLayoutAlign="space-between end" >
+          <p>{{card.MovieName}}</p>
+        <div style="margin-bottom:15px;">
+    <ngb-rating [(rate)]="currentRate"></ngb-rating>
+  
       </div>
+      </div>
+      </mat-card>
+      </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+</div>
+  <div fxFlexAlign="center" class="ClickedMovieCards" >
+  <mat-card style="padding:0" >
+    <mat-card-header  class="ClickedCardheader">
+
+    </mat-card-header>
+    <mat-card-content style="padding:5px !important;">
+      <div fxLayout="row" fxLayoutAlign="space-between end" >
+        <p>{{Movienamevar}}</p>
+      <div style="margin-bottom:15px;">
+  <ngb-rating [(rate)]="Ratingsvar"></ngb-rating>
     </div>
-  </div>
-  <div>  
-    <div>
-      <mat-toolbar class="sub-header">
-        <span class="example-spacer2"></span>
-       <input type="text" class="Searchbox" placeholder="Search" [(ngModel)]="term"
-       >
-    </mat-toolbar>
-    </div>
-    <mat-card  class="MovieCards" >
-    <div fxLayout="row" fxLayoutAlign="space-between center" >
-      <p>{{Movienamevar}}</p>
-    <div style="margin-bottom:15px;">
-<ngb-rating [(rate)]="Ratingsvar"></ngb-rating>
-  </div>
-  </div>
+    </div>    </mat-card-content>
   </mat-card>
 </div>
-
 </div>

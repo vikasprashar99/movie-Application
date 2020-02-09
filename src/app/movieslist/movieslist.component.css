@@ -1,6 +1,5 @@
 
-  /* header */
-  
+/* TOP HEADER */  
   .top-level-header {
     top: 0;
     margin:0;
@@ -16,14 +15,16 @@ background-color: goldenrod;
     color: rgba(0,0,0,.87);
 
 }
-/* SUB header */
+/* *********************************************************************************************************** */
+
+/* SUB HEADER */
 .sub-header{
     left: 0;
     background-color: #e3dddd;
     height: 250px; 
 }
 .example-spacer2{
-    flex: 0.5 0.5 auto;
+    flex: 0.5 0.5 auto; 
 }
 .sub-header > .Searchbox{
 border: none;
@@ -35,15 +36,19 @@ border-radius: 20px;
     color: black;
     opacity: 3; 
   }
+  /* *********************************************************************************************************** */
 
-  /* Sort Row */
+
+  /* SORTING Row */
 .Subsort{
   margin-top: 10px;
 }
   .Sort > .sortRows{
       background-color: #d3cfcf !important;
   }
-  /* Cards */
+   /* *********************************************************************************************************** */
+
+  /*MOVIE Cards */
   .MovieLists{
       margin-top: 40px;
       margin-left: 20%;
@@ -56,10 +61,15 @@ border-radius: 20px;
       margin-top: 20px;
       cursor: pointer;
   }
-
+  .Cardheader{
+    background-color: #e3dddd;
+    padding:75px;
+  }
   .LoadmoreButton{
       margin-top: 50px;
   }
+     /* *********************************************************************************************************** */
+
 
 
 
