@@ -264,6 +264,7 @@ export class MovieslistComponent implements OnInit {
     private Movieservice: MovieserviceService
   ) {
     config.max = 5;
+    config.readonly = true;
   }
   ngOnInit() {
     this.getMovieData();

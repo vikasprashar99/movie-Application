@@ -70,6 +70,7 @@ export class MovieInfoComponent implements OnInit {
   Movienamevar;
   Ratingsvar;
   constructor(private router:Router,config: NgbRatingConfig, private Movieservice: MovieserviceService) {
+    // FOR STARS
     config.max = 5;
     config.readonly = true;
    }
