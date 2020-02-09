@@ -3,12 +3,13 @@ import { NgbRatingConfig } from "@ng-bootstrap/ng-bootstrap";
 import { StarRatingModule } from "angular-star-rating";
 import { Router } from "@angular/router";
 import { MovieserviceService } from "../movieservice.service";
+// import the db which has the movie data
 import * as data from "../../db.json";
 
 export class MOVIELIST {
   Sno: string;
   Moviename: string;
-  Starrating: number;
+  Starrating: any;
   year: string;
   isfeatured: string;
 }
@@ -21,7 +22,6 @@ export class MOVIELIST {
 export class MovieslistComponent implements OnInit {
   start;
   end;
-  lengthOfArray;
   dataofmovies: MOVIELIST[] = [];
   Moviesvar: any[] = [];
   constructor(
@@ -48,23 +48,20 @@ export class MovieslistComponent implements OnInit {
     }
     this.start = 0;
     this.end = 9;
-    this.lengthOfArray = this.dataofmovies.length;
     this.Moviesvar = this.dataofmovies.slice(this.start, this.end);
-    // console.log(this.Moviesvar);
   }
   // LOAD MORE BUTTON
   loadmoreMovies() {
     this.end = this.end + 9;
     this.Moviesvar = this.dataofmovies.slice(0, this.end);
-    //console.log(this.Moviesvar);
   }
   //LOGOUT BUTTON
   Logout() {
     this.router.navigate(["/Signup"]);
   }
+
   // ONCLICKING A PARTICULAR MOVIE CARD
   movieInfo(data) {
-    // console.log(data);
     this.Movieservice.moviename = data.Moviename;
     this.Movieservice.Rating = data.Starrating;
     this.router.navigate(["/Movieinfo"]);
