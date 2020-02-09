@@ -1,47 +1,68 @@
 <!-- header -->
-<mat-toolbar
-  class="top-level-header"
-  fullscreen
->
-</mat-toolbar>
+<mat-toolbar class="top-level-header" fullscreen> </mat-toolbar>
 <!-- Signup form -->
-<div class="main-container" >
-    <mat-card class="sub-container">
-        <div  >
-          <form (ngSubmit)="onSubmit()">
-            <mat-form-field class="form-field">
-            <input matInput placeholder="Full Name" onkeydown="return /[a-z]/i.test(event.key)" [formControl]="fullname"
-            required>
-            <mat-error>This field is required</mat-error>
-          </mat-form-field><br>
-          <mat-form-field class="form-field">
-            <input matInput placeholder="Enter your email" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field class="form-field">
-            <input matInput  maxlength="8"  placeholder="Password" [type]="hide ? 'password' : 'text'" [formControl]="password"
-            required>
-            <button
+<div class="main-container">
+  <mat-card class="sub-container">
+    <div>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            placeholder="Full Name"
+            onkeydown="return /[a-z]/i.test(event.key)"
+            [formControl]="fullname"
+            required
+          />
+          <mat-error>This field is required</mat-error> </mat-form-field
+        ><br />
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            placeholder="Enter your email"
+            [formControl]="email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            maxlength="8"
+            placeholder="Password"
+            [type]="hide ? 'password' : 'text'"
+            [formControl]="password"
+            required
+          />
+          <mat-error *ngIf="password.invalid">{{
+            getErrorMessage1()
+          }}</mat-error>
+
+          <button
             mat-icon-button
             matSuffix
             (click)="hide = !hide"
             [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide"
           >
-            <mat-icon>{{
-              hide ? "visibility_off" : "visibility"
-            }}</mat-icon>
-          </button>            
-          <mat-hint align="end">{{password.value.length}} / 8</mat-hint>
-          <mat-hint>Atleast 8 character long. Must have an uppercase letter and an integer</mat-hint>
-          <mat-error>this field is required</mat-error>
-          </mat-form-field><br><br>
-          <button mat-raised-button color="primary" type="submit" class="btn btn-primary" >Submit</button>
-        </form>
-        </div>
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-hint align="end">{{ password.value.length }} / 8</mat-hint>
+          <mat-hint
+            >Atleast 8 character long. Must have an uppercase letter and an
+            integer</mat-hint
+          >
+          <mat-error>this field is required</mat-error> </mat-form-field
+        ><br /><br />
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   </mat-card>
 </div>
-
-
-

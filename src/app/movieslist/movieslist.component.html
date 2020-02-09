@@ -1,47 +1,71 @@
 <!-- Header -->
 <div fxLayout="column" style="overflow: auto;">
-    <div>
-    <mat-toolbar color="primary"  class="top-level-header" fullscreen>
-    <mat-toolbar-row>
-      <span class="example-spacer"></span>
-      <mat-chip-list aria-label="Fish selection" >
-        <mat-chip mat-raised-button (click)="Logout()" style="cursor: pointer;">Logout</mat-chip>
-      </mat-chip-list>   
-     </mat-toolbar-row>
-  </mat-toolbar>
-</div>
-
-<!-- SUB header -->
-<div>
-  <mat-toolbar class="sub-header">
-    <span class="example-spacer2"></span>
-   <input type="text" class="Searchbox" placeholder="Search" [(ngModel)]="term"
-   >
-</mat-toolbar>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px" class="Sort">
-<p class="Subsort">Sort:</p> 
-<mat-chip class="sortRows" (click)="SortByName()">By name</mat-chip>
-<mat-chip class="sortRows" (click)="SortByYear()">By year</mat-chip>
-<mat-chip class="sortRows" (click)="SortByRating()">By rating</mat-chip>
-</div>
-
-<!--ALL  MovieCards -->
-<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" class="MovieLists" >
-    <mat-card *ngFor="let cards of Moviesvar | slice:0:9| filter: term;" class="MovieCards" (click)="movieInfo(cards)" style="padding:0">
-      <mat-card-header  class="Cardheader">
-      </mat-card-header>
-      <div fxLayout="row" fxLayoutAlign="space-between end" >
-        <p>{{cards.MovieName}}</p>
-      <div style="margin-bottom:15px;">
-  <ngb-rating [(rate)]="currentRate"></ngb-rating>
-
-    </div>
-    </div>
+  <div>
+    <mat-toolbar color="primary" class="top-level-header" fullscreen>
+      <mat-toolbar-row>
+        <span class="example-spacer"></span>
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip
+            mat-raised-button
+            (click)="Logout()"
+            style="cursor: pointer;"
+            >Logout</mat-chip
+          >
+        </mat-chip-list>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <!-- SUB header -->
+  <div>
+    <mat-toolbar class="sub-header">
+      <span class="example-spacer2"></span>
+      <input
+        type="text"
+        class="Searchbox"
+        placeholder="Search"
+        [(ngModel)]="term"
+      />
+    </mat-toolbar>
+  </div>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutGap="15px"
+    class="Sort"
+  >
+    <p class="Subsort">Sort:</p>
+    <mat-chip class="sortRows" (click)="SortByName()">By name</mat-chip>
+    <mat-chip class="sortRows" (click)="SortByYear()">By year</mat-chip>
+    <mat-chip class="sortRows" (click)="SortByRating()">By rating</mat-chip>
+  </div>
+  <!-- MovieCards -->
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="center"
+    fxLayoutGap="20px"
+    class="MovieLists"
+  >
+    <mat-card
+      *ngFor="let cards of Moviesvar | slice: start:end | filter: term"
+      class="MovieCards"
+      (click)="movieInfo(cards)"
+      style="padding:0"
+    >
+      <mat-card-header class="Cardheader"> </mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="space-between end">
+        <p>{{ cards.MovieName }}</p>
+        <div style="margin-bottom:15px;">
+          <ngb-rating [(rate)]="currentRate"></ngb-rating>
+        </div>
+      </div>
     </mat-card>
-</div><br><br>
-<button (click)="loadmoreMovies(cards)" style="width: 100px;" fxFlexAlign="center">Load more</button>
+  </div>
+  <br /><br />
+  <button
+    (click)="loadmoreMovies(cards)"
+    style="width: 100px;"
+    fxFlexAlign="center"
+  >
+    Load more
+  </button>
 </div>
-
-
-
