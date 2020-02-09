@@ -33,7 +33,7 @@
     fxLayoutGap="15px"
     class="Sort"
   >
-    <p class="Subsort" ><b>Sort:</b></p>
+    <p class="Subsort"><b>Sort:</b></p>
     <mat-chip class="sortRows" (click)="SortByName()">By name</mat-chip>
     <mat-chip class="sortRows" (click)="SortByYear()">By year</mat-chip>
     <mat-chip class="sortRows" (click)="SortByRating()">By rating</mat-chip>
@@ -55,7 +55,10 @@
       <div fxLayout="row" fxLayoutAlign="space-between end" style="padding:1em">
         <p>{{ cards.Moviename }}</p>
         <div style="margin-bottom:15px;">
-          <ngb-rating [(rate)]="cards.Starrating"></ngb-rating>
+          <ngb-rating
+            style="color: rgb(243, 243, 55) ;font-size: 20px;"
+            [(rate)]="cards.Starrating"
+          ></ngb-rating>
         </div>
       </div>
     </mat-card>
