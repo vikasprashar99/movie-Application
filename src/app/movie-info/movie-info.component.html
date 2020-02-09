@@ -1,7 +1,6 @@
 <!-- Header -->
 <div fxLayout="column" style="overflow: auto;">
-    <div>
-    <mat-toolbar color="primary"  class="top-level-header" fullscreen>
+    <!-- <mat-toolbar color="primary"  class="top-level-header" fullscreen>
     <mat-toolbar-row>
         <mat-chip-list aria-label="Fish selection" >
             <mat-chip mat-raised-button (click)="back()" style="cursor: pointer;">Back</mat-chip>
@@ -11,5 +10,16 @@
         <mat-chip mat-raised-button (click)="Logout()" style="cursor: pointer;">Logout</mat-chip>
       </mat-chip-list>   
      </mat-toolbar-row>
-  </mat-toolbar>
+  </mat-toolbar> -->
+  <div *ngFor="let rating of data">
+    <ngb-rating [rate]="rating" [max]=4 [readonly]=true>
+      <ng-template let-fill="fill">
+        <span class="star" >&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    </div>
+    <br>
+    <hr>
+    
+    
 </div>

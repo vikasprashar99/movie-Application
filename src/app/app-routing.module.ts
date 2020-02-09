@@ -6,7 +6,7 @@ import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 
 const routes: Routes = [
-  { path: "Signup", redirectTo: "SignUpComponent", pathMatch: "full" },
+  { path: "", redirectTo: "Signup", pathMatch: "full" },
   { path: "Signup", component: SignUpComponent },
   {
     path: "Movies",

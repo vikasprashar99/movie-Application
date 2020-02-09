@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-movie-info',
@@ -7,8 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./movie-info.component.css']
 })
 export class MovieInfoComponent implements OnInit {
+  data: number[] = [3, 4, 1];
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,config: NgbRatingConfig) {
+    config.max = 5;
+    config.readonly = true;
+   }
 
   ngOnInit() {
   }

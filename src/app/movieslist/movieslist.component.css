@@ -2,7 +2,6 @@
   /* header */
   
   .top-level-header {
-    position: fixed;
     top: 0;
     margin:0;
     left: 0;
@@ -19,11 +18,9 @@ background-color: goldenrod;
 }
 /* SUB header */
 .sub-header{
-    margin-top:48px;
-    position: fixed;
     left: 0;
     background-color: #e3dddd;
-    height: 35%; 
+    height: 250px; 
 }
 .example-spacer2{
     flex: 0.5 0.5 auto;
@@ -40,17 +37,18 @@ border-radius: 20px;
   }
 
   /* Sort Row */
-  .Sort{
-    margin-top:310px;
-  }
+.Subsort{
+  margin-top: 10px;
+}
   .Sort > .sortRows{
       background-color: #d3cfcf !important;
   }
   /* Cards */
   .MovieLists{
       margin-top: 40px;
-      margin-left: 17%;
+      margin-left: 20%;
       margin-right: 10%;
+      place-content: baseline !important;
     }
   .MovieLists > .MovieCards{
       width: 300px;
@@ -63,4 +61,3 @@ border-radius: 20px;
       margin-top: 50px;
   }
 
- 
