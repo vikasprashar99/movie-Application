@@ -1,25 +1,66 @@
 <!-- Header -->
 <div fxLayout="column" style="overflow: auto;">
-    <!-- <mat-toolbar color="primary"  class="top-level-header" fullscreen>
-    <mat-toolbar-row>
-        <mat-chip-list aria-label="Fish selection" >
-            <mat-chip mat-raised-button (click)="back()" style="cursor: pointer;">Back</mat-chip>
-          </mat-chip-list>   
-      <span class="example-spacer"></span>
-      <mat-chip-list aria-label="Fish selection" >
-        <mat-chip mat-raised-button (click)="Logout()" style="cursor: pointer;">Logout</mat-chip>
-      </mat-chip-list>   
-     </mat-toolbar-row>
-  </mat-toolbar> -->
-  <div *ngFor="let rating of data">
-    <ngb-rating [rate]="rating" [max]=4 [readonly]=true>
-      <ng-template let-fill="fill">
-        <span class="star" >&#9733;</span>
-      </ng-template>
-    </ngb-rating>
+  <div>
+    <mat-toolbar color="primary" class="top-level-header" fullscreen>
+      <mat-toolbar-row>
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip mat-raised-button (click)="back()" style="cursor: pointer;"
+            >Back</mat-chip
+          >
+        </mat-chip-list>
+        <span class="example-spacer"></span>
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip
+            mat-raised-button
+            (click)="Logout()"
+            style="cursor: pointer;"
+            >Logout</mat-chip
+          >
+        </mat-chip-list>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+
+  <!-- <marquee>
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px" >
+    <mat-card *ngFor="let cards of a " class="MovieCards" (click)="movieInfo()">
+      <div fxLayout="row" fxLayoutAlign="space-between end" style="margin-top: 50%;">
+        <p>{{cards.MovieName}}</p>
+      <div style="margin-bottom:15px;">
+  <ngb-rating [(rate)]="currentRate"></ngb-rating>
+
     </div>
-    <br>
-    <hr>
-    
-    
+    </div>
+    </mat-card>
+</div>
+</marquee> -->
+  <div class="marquee">
+    <div class="track">
+      <div
+        class="content"
+        style="  font-size: 144px;
+    "
+      >
+        &nbsp;Infinite Marquee 
+      </div>
+    </div>
+  </div>
+  <div>  
+    <div>
+      <mat-toolbar class="sub-header">
+        <span class="example-spacer2"></span>
+       <input type="text" class="Searchbox" placeholder="Search" [(ngModel)]="term"
+       >
+    </mat-toolbar>
+    </div>
+    <mat-card  class="MovieCards" >
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+      <p>{{Movienamevar}}</p>
+    <div style="margin-bottom:15px;">
+<ngb-rating [(rate)]="Ratingsvar"></ngb-rating>
+  </div>
+  </div>
+  </mat-card>
+</div>
+
 </div>
