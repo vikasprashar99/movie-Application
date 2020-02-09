@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   email = new FormControl("", [Validators.required, Validators.email]);
   password = new FormControl("", [
     Validators.required,
-    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/)  
+    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/)
   ]);
   hide = true;
 
