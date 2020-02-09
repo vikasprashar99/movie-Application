@@ -57,13 +57,13 @@ border-radius: 20px;
     }
   .MovieLists > .MovieCards{
       width: 300px;
-      height: 200px;
+      height: 260px;
       margin-top: 20px;
       cursor: pointer;
   }
   .Cardheader{
     background-color: #e3dddd;
-    padding:75px;
+    padding:81px;
   }
   .LoadmoreButton{
       margin-top: 50px;

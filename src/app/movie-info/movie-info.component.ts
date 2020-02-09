@@ -2,6 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbRatingConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { MovieserviceService } from '../movieservice.service';
+import * as data from '../../db.json';
+
+export class MOVIELIST{
+  Sno:string;
+  Moviename:string;
+  Starrating:number;
+  year:string;
+  isfeatured:string
+}
 
 @Component({
   selector: 'app-movie-info',
@@ -9,64 +18,7 @@ import { MovieserviceService } from '../movieservice.service';
   styleUrls: ['./movie-info.component.css']
 })
 export class MovieInfoComponent implements OnInit {
- 
-  a=[  {
-    Sno:66,
-    MovieName:"Incredibals 2",
-    StarRating:"5",
-    Year:2019,
-    isFeatured:false
-  },
-  {
-    Sno:73,
-    MovieName:"Captain Marvel",
-    StarRating:"4",
-    Year:2019,
-    isFeatured:false
-  },
-  {
-    Sno:64,
-    MovieName:"Frozen  ",
-    StarRating:"5",
-    Year:2013,
-    isFeatured:false
-  },
-  {
-    Sno:14,
-    MovieName:"Harry Potter and the Chamber of Secrets  ",
-    StarRating:"1",
-    Year:2001,
-    isFeatured:true
-  },
-  {
-    Sno:93,
-    MovieName:"Harry Potter and the Deathly Hallows - Part 1  ",
-    StarRating:"4",
-    Year:2010,
-    isFeatured:false
-  },
-  {
-    Sno:11,
-    MovieName:"Harry Potter and the Goblet of Fire  ",
-    StarRating:"3",
-    Year:2020,
-    isFeatured:false
-  },
-  {
-    Sno:11,
-    MovieName:"test2 ",
-    StarRating:"3",
-    Year:2020,
-    isFeatured:false
-  },
-  {
-    Sno:11,
-    MovieName:"test3  ",
-    StarRating:"3",
-    Year:2020,
-    isFeatured:false
-  }
-  ]
+ dataofmovies:MOVIELIST[]=[];
   Movienamevar;
   Ratingsvar;
   constructor(private router:Router,config: NgbRatingConfig, private Movieservice: MovieserviceService) {
@@ -79,7 +31,19 @@ export class MovieInfoComponent implements OnInit {
     // TO GET THE DETAILS OF SLECTED MOVIE CARD
 this.Movienamevar=this.Movieservice.moviename
 this.Ratingsvar=this.Movieservice.Rating;
-this.slides = this.chunk(this.a, 3);
+this.slides = this.chunk(this.dataofmovies, 3);
+for(const e in data.Sheet1){
+  const ob=new MOVIELIST();
+  if(data.Sheet1[e].isFeatured== "TRUE"){
+  ob.Sno=data.Sheet1[e].Sno;
+  ob.Moviename=data.Sheet1[e].Moviename;
+  ob.Starrating=data.Sheet1[e].Starrating;
+  ob.year=data.Sheet1[e].Year;
+  ob.isfeatured=data.Sheet1[e].isFeatured
+  this.dataofmovies.push(ob)
+  }
+}
+
 }
 // FOR carousel
   slides: any = [[]];

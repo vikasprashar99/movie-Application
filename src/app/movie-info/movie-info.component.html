@@ -23,25 +23,25 @@
 
 
   <!-- /* CAROUSEL CARDS */ -->
-  <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+  <div fxLayout="row">
+  <mdb-carousel  class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
   [animation]="'slide'">
-  <mdb-carousel-item *ngFor="let item of a; let i = index">
+  <mdb-carousel-item *ngFor="let item of dataofmovies; let i = index">
       <div  fxLayoutGap="20px" class="MovieLists" fxLayout="row">
-      <mat-card class="Carasoulcards"  style="padding:0" *ngFor="let card of a; let cardIndex = index">
+      <mat-card class="Carasoulcards"  style="padding:0" *ngFor="let card of dataofmovies; let cardIndex = index">
         <mat-card-header  class="CarasoulCardheader">
         </mat-card-header>
-        <div fxLayout="row" fxLayoutAlign="space-between end" >
-          <p>{{card.MovieName}}</p>
+        <div fxLayout="row" fxLayoutAlign="space-between end" style="padding: 1em;">
+          <p>{{card.Moviename}}</p>
         <div style="margin-bottom:15px;">
-    <ngb-rating [(rate)]="card.StarRating"></ngb-rating>
-  
+          <ngb-rating [(rate)]="card.Starrating"></ngb-rating>
       </div>
       </div>
       </mat-card>
       </div>
   </mdb-carousel-item>
 </mdb-carousel>
-
+</div>
 
 <!-- SELECTED MOVIE CARD -->
   <div fxFlexAlign="center" class="ClickedMovieCards" >
@@ -50,7 +50,7 @@
 
     </mat-card-header>
     <mat-card-content style="padding:5px !important;">
-      <div fxLayout="row" fxLayoutAlign="space-between end" >
+      <div fxLayout="row" fxLayoutAlign="space-between end" style="padding: 1em" >
         <p>{{Movienamevar}}</p>
       <div style="margin-bottom:15px;">
   <ngb-rating [(rate)]="Ratingsvar"></ngb-rating>
