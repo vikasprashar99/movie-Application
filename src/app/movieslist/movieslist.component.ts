@@ -19,6 +19,8 @@ export class MovieDetails{
   providers: [NgbRatingConfig] // add NgbRatingConfig to the component providers
 })
 export class MovieslistComponent implements OnInit {
+
+
 Movies:string[]=[];
 Moviesvar:MovieDetails[]=[];
 currentRate=[];

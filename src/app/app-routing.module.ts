@@ -4,7 +4,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { MovieslistComponent } from './movieslist/movieslist.component'; 
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 
-
+// FOR ROUTING AND NAVIGATION
 const routes: Routes = [
   { path: "", redirectTo: "Signup", pathMatch: "full" },
   { path: "Signup", component: SignUpComponent },

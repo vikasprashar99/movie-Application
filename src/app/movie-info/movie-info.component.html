@@ -20,7 +20,9 @@
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-<div>
+
+
+  <!-- /* CAROUSEL CARDS */ -->
   <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
   [animation]="'slide'">
   <mdb-carousel-item *ngFor="let item of a; let i = index">
@@ -39,7 +41,9 @@
       </div>
   </mdb-carousel-item>
 </mdb-carousel>
-</div>
+
+
+<!-- SELECTED MOVIE CARD -->
   <div fxFlexAlign="center" class="ClickedMovieCards" >
   <mat-card style="padding:0" >
     <mat-card-header  class="ClickedCardheader">

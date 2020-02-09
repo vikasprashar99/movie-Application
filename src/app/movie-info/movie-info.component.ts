@@ -59,6 +59,20 @@ export class MovieInfoComponent implements OnInit {
     StarRating:"3",
     Year:2020,
     isFeatured:false
+  },
+  {
+    Sno:11,
+    MovieName:"test2 ",
+    StarRating:"3",
+    Year:2020,
+    isFeatured:false
+  },
+  {
+    Sno:11,
+    MovieName:"test3  ",
+    StarRating:"3",
+    Year:2020,
+    isFeatured:false
   }
   ]
   Movienamevar;
