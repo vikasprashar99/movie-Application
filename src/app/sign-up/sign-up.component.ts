@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
   }
   getErrorMessage1() {
     return this.password.hasError("required")
-      ? "You must enter a EmailID"
+      ? "You must enter a Pwd"
       : this.password.hasError("pattern")
       ? "Not a valid pwd"
       : "";
