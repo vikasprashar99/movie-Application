@@ -33,7 +33,7 @@
     fxLayoutGap="15px"
     class="Sort"
   >
-    <p class="Subsort">Sort:</p>
+    <p class="Subsort" ><b>Sort:</b></p>
     <mat-chip class="sortRows" (click)="SortByName()">By name</mat-chip>
     <mat-chip class="sortRows" (click)="SortByYear()">By year</mat-chip>
     <mat-chip class="sortRows" (click)="SortByRating()">By rating</mat-chip>
@@ -55,17 +55,17 @@
       <div fxLayout="row" fxLayoutAlign="space-between end">
         <p>{{ cards.MovieName }}</p>
         <div style="margin-bottom:15px;">
-          <ngb-rating [(rate)]="currentRate"></ngb-rating>
+          <ngb-rating [(rate)]="cards.StarRating"></ngb-rating>
         </div>
       </div>
     </mat-card>
   </div>
-  <br /><br />
-  <button
+  <br />
+  <mat-chip
     (click)="loadmoreMovies(cards)"
-    style="width: 100px;"
     fxFlexAlign="center"
+    style="      background-color: #d3cfcf !important; margin-bottom: 50px; "
   >
     Load more
-  </button>
+  </mat-chip>
 </div>

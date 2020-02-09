@@ -9,14 +9,14 @@ import { MatSnackBar } from "@angular/material";
   styleUrls: ["./sign-up.component.css"]
 })
 export class SignUpComponent implements OnInit {
+  // FORM CONTROLS FOR INPUT FILEDS
   fullname = new FormControl("", [Validators.required]);
   email = new FormControl("", [Validators.required, Validators.email]);
   password = new FormControl("", [
     Validators.required,
-    Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])$/)
+    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/)  
   ]);
   hide = true;
-  passw = /^(?=.*\d)(?=.*[A-Z]).{6,20}$/;
 
   constructor(private router: Router, private _snackBar: MatSnackBar) {}
 
@@ -29,19 +29,22 @@ export class SignUpComponent implements OnInit {
       ? "Not a valid email"
       : "";
   }
-  getErrorMessage1() {
+  //PASSWORD VALIDATOR
+  getPassowordErrorMessage() {
     return this.password.hasError("required")
-      ? "You must enter a Pwd"
+      ? "You must enter a Password"
       : this.password.hasError("pattern")
-      ? "Not a valid pwd"
+      ? "Not a valid Password"
       : "";
   }
+  // SUBMIT BUTTON
   onSubmit() {
     if (
       this.fullname.value == "" ||
       this.email.value == "" ||
       this.password.value == "" ||
-      this.password.hasError("pattern")
+      this.password.hasError("pattern") ||
+      this.email.hasError("email")
     ) {
       const message = "Plase fill all the fields";
       const action = "Try again";

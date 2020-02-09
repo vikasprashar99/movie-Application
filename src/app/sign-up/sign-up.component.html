@@ -35,7 +35,7 @@
             required
           />
           <mat-error *ngIf="password.invalid">{{
-            getErrorMessage1()
+            getPassowordErrorMessage()
           }}</mat-error>
 
           <button
@@ -52,7 +52,7 @@
             >Atleast 8 character long. Must have an uppercase letter and an
             integer</mat-hint
           >
-          <mat-error>this field is required</mat-error> </mat-form-field
+           </mat-form-field
         ><br /><br />
         <button
           mat-raised-button

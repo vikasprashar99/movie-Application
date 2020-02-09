@@ -4,13 +4,6 @@ import { StarRatingModule } from "angular-star-rating";
 import { Router } from "@angular/router";
 import { MovieserviceService } from "../movieservice.service";
 
-export class MovieDetails {
-  Sno: number;
-  MovieName: string;
-  StarRating: string;
-  Year: number;
-  isFeatured: boolean;
-}
 
 @Component({
   selector: "app-movieslist",
@@ -19,13 +12,12 @@ export class MovieDetails {
   providers: [NgbRatingConfig] // add NgbRatingConfig to the component providers
 })
 export class MovieslistComponent implements OnInit {
-  Movies: string[] = [];
   start;
   end;
   lengthOfArray;
-  Moviesvar: MovieDetails[] = [];
-  currentRate = [];
-  a = [
+  Moviesvar: any[] = [];
+// MOVIE DATA
+  MoviesList = [
     {
       Sno: 66,
       MovieName: "Incredibals 2",
@@ -70,74 +62,200 @@ export class MovieslistComponent implements OnInit {
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "Harry  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "Harry Potter   ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "Harry Potter aand the Goblet  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "Harry Potter and fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: " the Goblet of Fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "H of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "H of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "H of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "H of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "H of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "H of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "H of Fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: " of Fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "et of Fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "Harry Potof Fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
     },
     {
       Sno: 11,
-      MovieName: "Harry Potter and the Goblet of Fire  ",
+      MovieName: "Harry Pott of Fire  ",
       StarRating: "3",
       Year: 2020,
       isFeatured: false
-    }
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of Fire  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },{
+      Sno: 11,
+      MovieName: "Harry Pott of yo  ",
+      StarRating: "3",
+      Year: 2020,
+      isFeatured: false
+    },
   ];
 
   constructor(
@@ -147,52 +265,36 @@ export class MovieslistComponent implements OnInit {
   ) {
     config.max = 5;
   }
-  stars: number[] = [1, 2, 3, 4, 5];
-  selectedValue: number;
-
   ngOnInit() {
     this.getMovieData();
   }
+  // TO GET THE MOVIES DATA
   getMovieData() {
     this.start = 0;
-    this.end = this.a.length;
-    // this.a.length = 6;
-    this.lengthOfArray = this.a.length;
-    this.Moviesvar = this.a.slice(0, 6);
+    console.log(this.MoviesList.length)
+    this.end = 9;
+    this.lengthOfArray = this.MoviesList.length;
+    this.Moviesvar = this.MoviesList.slice(this.start, this.end);
     console.log(this.Moviesvar);
   }
-
+// LOAD MORE BUTTON
   loadmoreMovies() {
-    this.start = 0;
     this.end = this.end + 6;
-    // console.log(this.lengthOfArray);
-    // // this.lengthOfArray = this.lengthOfArray + 6;
-    // console.log(this.lengthOfArray);
-    this.Moviesvar = this.a.slice(0, 12);
-    // for (const e in this.a) {
-    //   const ob = new MovieDetails();
-    //   ob.Sno = this.a[e].Sno;
-    //   ob.MovieName = this.a[e].MovieName;
-    //   ob.Year = this.a[e].Year;
-    //   ob.StarRating = this.a[e].StarRating;
-    //   ob.isFeatured = this.a[e].isFeatured;
-    //   this.Moviesvar.push(ob);
-    // }
+    this.Moviesvar = this.MoviesList.slice(0, this.end);
     console.log(this.Moviesvar);
-    // console.log(this.start, this.end);
-    // for
-    //for (const)
   }
+  //LOGOUT BUTTON 
   Logout() {
     this.router.navigate(["/Signup"]);
   }
+  // ONCLICKING A PARTICULAR MOVIE CARD
   movieInfo(data) {
     console.log(data);
     this.Movieservice.moviename = data.MovieName;
     this.Movieservice.Rating = data.StarRating;
     this.router.navigate(["/Movieinfo"]);
   }
-
+// SORTING
   SortByName() {
     return this.Moviesvar.sort((a, b) => (a.MovieName < b.MovieName ? -1 : 1));
   }

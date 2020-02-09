@@ -3,14 +3,6 @@ import { Router } from '@angular/router';
 import { NgbRatingConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { MovieserviceService } from '../movieservice.service';
 
-
-export class MovieDetails{
-  Sno:number;
-  MovieName:string;
-  StarRating:string;
-  Year:number;
-  isFeatured:boolean;
-}
 @Component({
   selector: 'app-movie-info',
   templateUrl: './movie-info.component.html',
