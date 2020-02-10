@@ -16,14 +16,15 @@ export class MOVIELIST {
   selector: "app-movieslist",
   templateUrl: "./movieslist.component.html",
   styleUrls: ["./movieslist.component.css"],
-  providers: [NgbRatingConfig] // add NgbRatingConfig to the component providers
+  providers: [NgbRatingConfig] // adding NgbRatingConfig to the component providers
 })
 export class MovieslistComponent implements OnInit {
   start;
   end;
   lengthOfArray;
   dataofmovies: MOVIELIST[] = [];
-  Moviesvar: any[] = [];
+
+  Moviesvar: any[] = []; //VARIABLE ARRAY THAT HOLDS THE MOVIES
   constructor(
     private router: Router,
     config: NgbRatingConfig,
@@ -46,6 +47,7 @@ export class MovieslistComponent implements OnInit {
       ob.isfeatured = data.Sheet1[e].isFeatured;
       this.dataofmovies.push(ob);
     }
+    // DEFINING THE INITIAL MOVIES LIST THAT NEED TO BE SHOWN
     this.start = 0;
     this.end = 9;
     this.lengthOfArray = this.dataofmovies.length;
