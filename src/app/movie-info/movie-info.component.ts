@@ -7,7 +7,7 @@ import * as data from '../../db.json';
 export class MOVIELIST{
   Sno:string;
   Moviename:string;
-  Starrating:number;
+  Starrating:any;
   year:string;
   isfeatured:string
 }
@@ -18,7 +18,7 @@ export class MOVIELIST{
   styleUrls: ['./movie-info.component.css']
 })
 export class MovieInfoComponent implements OnInit {
- dataofmovies:MOVIELIST[]=[];
+ FeaturedDataofMovies:MOVIELIST[]=[];
   Movienamevar;
   Ratingsvar;
   constructor(private router:Router,config: NgbRatingConfig, private Movieservice: MovieserviceService) {
@@ -31,7 +31,7 @@ export class MovieInfoComponent implements OnInit {
     // TO GET THE DETAILS OF SLECTED MOVIE CARD
 this.Movienamevar=this.Movieservice.moviename
 this.Ratingsvar=this.Movieservice.Rating;
-this.slides = this.chunk(this.dataofmovies, 3);
+this.slides = this.chunk(this.FeaturedDataofMovies, 3);
 for(const e in data.Sheet1){
   const ob=new MOVIELIST();
   if(data.Sheet1[e].isFeatured== "TRUE"){
@@ -40,7 +40,7 @@ for(const e in data.Sheet1){
   ob.Starrating=data.Sheet1[e].Starrating;
   ob.year=data.Sheet1[e].Year;
   ob.isfeatured=data.Sheet1[e].isFeatured
-  this.dataofmovies.push(ob)
+  this.FeaturedDataofMovies.push(ob)
   }
 }
 

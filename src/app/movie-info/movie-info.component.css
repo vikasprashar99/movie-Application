@@ -4,7 +4,7 @@
     margin:0;
     left: 0;
     height: 40px;
-background-color: goldenrod;    
+background-color: #FFDE72;    
 }
 .example-spacer {
   flex: 1 1 auto;
@@ -21,10 +21,10 @@ background-color: goldenrod;
 }
 .MovieLists > .Carasoulcards{
   height: 230px;
-  width: 300px;
+  width: 290px;
 }
 .CarasoulCardheader{
-  background-color: #e3dddd;
+  background-color: #E6E6E6;
   padding:75px;
 }
 /* *********************************************************************************************************** */
@@ -37,7 +37,7 @@ background-color: goldenrod;
 }
 
 .ClickedCardheader{
-  background-color: #e3dddd;
+  background-color: #E6E6E6;
   padding:128px;
 }
 /* *********************************************************************************************************** */
