@@ -20,8 +20,8 @@ background-color: #FFDE72;
   margin-top: 25px;
 }
 .MovieLists > .Carasoulcards{
-  height: 230px;
-  width: 290px;
+  height: 239px;
+    width: 290px;
 }
 .CarasoulCardheader{
   background-color: #E6E6E6;
@@ -31,9 +31,9 @@ background-color: #FFDE72;
 
 /* CLICKED MOVIE CARD  */
 .ClickedMovieCards{
-    width: 550px;
-    height: 310px;
-    margin-top: 88px;
+    width: 40%;
+    height: 50%;
+    margin-top: 63px;
 }
 
 .ClickedCardheader{

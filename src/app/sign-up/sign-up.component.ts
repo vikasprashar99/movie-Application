@@ -14,13 +14,15 @@ export class SignUpComponent implements OnInit {
   email = new FormControl("", [Validators.required, Validators.email]);
   password = new FormControl("", [
     Validators.required,
-    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/)
+    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/),
+    Validators.minLength(8)
   ]);
   hide = true;
 
   constructor(private router: Router, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {}
+
   // EMAIL Validator
   getErrorMessage() {
     return this.email.hasError("required")
@@ -44,9 +46,10 @@ export class SignUpComponent implements OnInit {
       this.email.value == "" ||
       this.password.value == "" ||
       this.password.hasError("pattern") ||
-      this.email.hasError("email")
+      this.email.hasError("email") ||
+      this.password.value.length < 8
     ) {
-      const message = "Plase fill all the fields";
+      const message = "Plase fill all the fields correctly ";
       const action = "Try again";
       this._snackBar.open(message, action, {
         duration: 2000
