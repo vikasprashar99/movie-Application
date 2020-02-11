@@ -58,10 +58,12 @@
   height: 260px;
   margin-top: 20px;
   cursor: pointer;
+  border-radius: 10px;
 }
 .Cardheader {
   background-color: #E6E6E6;
   padding: 81px;
+  border-top: 10px;
 }
 .LoadmoreButton {
   margin-top: 50px;

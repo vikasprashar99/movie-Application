@@ -20,24 +20,35 @@ background-color: #FFDE72;
   margin-top: 25px;
 }
 .MovieLists > .Carasoulcards{
-  height: 239px;
-    width: 290px;
+  height: 90%;
+    width: 20%;
 }
 .CarasoulCardheader{
   background-color: #E6E6E6;
   padding:75px;
+  border-top: 10px;
+}
+.carousel-indicators {
+  display: none !important;
 }
 /* *********************************************************************************************************** */
 
 /* CLICKED MOVIE CARD  */
 .ClickedMovieCards{
-    width: 40%;
-    height: 50%;
-    margin-top: 63px;
+    width: 43%;
+    height: 342px;
+    margin-top: 16px;
 }
 
 .ClickedCardheader{
   background-color: #E6E6E6;
   padding:128px;
+  border-top: 10px;
 }
 /* *********************************************************************************************************** */
+
+@media   (max-width: 1000px) {
+.MovieLists > .Carasoulcards{
+    width: 18%;
+}
+}
