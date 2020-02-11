@@ -17,14 +17,14 @@ export class MOVIELIST {
   selector: "app-movieslist",
   templateUrl: "./movieslist.component.html",
   styleUrls: ["./movieslist.component.css"],
-  providers: [NgbRatingConfig] // adding NgbRatingConfig to the component providers
+  providers: [NgbRatingConfig] // FOR STAR RATINGS
 })
 export class MovieslistComponent implements OnInit {
   start;
   end;
   dataofmovies: MOVIELIST[] = [];
 
-  Moviesvar: any[] = []; //VARIABLE ARRAY THAT HOLDS THE MOVIES
+  Moviesvar: any[] = []; //VARIABLE ARRAY THAT HOLDS THE MOVIES LIST
   constructor(
     private router: Router,
     config: NgbRatingConfig,
@@ -54,6 +54,7 @@ export class MovieslistComponent implements OnInit {
   }
   // LOAD MORE BUTTON
   loadmoreMovies() {
+    // TO GET 9 MORE MOVIES LIST ON CLICK
     this.end = this.end + 9;
     this.Moviesvar = this.dataofmovies.slice(0, this.end);
   }
@@ -64,11 +65,12 @@ export class MovieslistComponent implements OnInit {
 
   // ONCLICKING A PARTICULAR MOVIE CARD
   movieInfo(data) {
+    // DATA SENT TO OTHER COMPONENT THROUGH SERVICE
     this.Movieservice.moviename = data.Moviename;
     this.Movieservice.Rating = data.Starrating;
     this.router.navigate(["/Movieinfo"]);
   }
-  // SORTING
+  // SORTING BY NAME, YEAR AND RATINGS
   SortByName() {
     return this.Moviesvar.sort((a, b) => (a.Moviename < b.Moviename ? -1 : 1));
   }
