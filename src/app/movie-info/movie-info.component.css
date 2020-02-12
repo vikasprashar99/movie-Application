@@ -47,8 +47,11 @@ background-color: #FFDE72;
 }
 /* *********************************************************************************************************** */
 
-@media   (max-width: 1000px) {
-.MovieLists > .Carasoulcards{
-    width: 18%;
+
+/* MEDIA QUERY FOR CLICKED CARASOUL */
+@media   (max-width: 600px) {
+  .ClickedMovieCards{
+    width: auto;
 }
+
 }
