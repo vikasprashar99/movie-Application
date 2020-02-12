@@ -33,3 +33,12 @@ background-color: #FFDE72;
   }
  /* *********************************************************************************************************** */
 
+/* MEDIA QUERY FOR SIGNUP FORM */
+@media   (max-width: 850px) {
+    .sub-container {
+  
+        width: auto;
+     
+      }
+  
+  }
