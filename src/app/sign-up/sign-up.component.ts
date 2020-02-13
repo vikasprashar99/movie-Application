@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
     return this.password.hasError("required")
       ? "You must enter a Password"
       : this.password.hasError("pattern")
-      ? "Not a valid Password, Must contain a integer and a Uppercase letter"
+      ? "Not a valid Password, Must contain an integer and an Uppercase letter"
       : "";
   }
   // SUBMIT BUTTON
