@@ -3,9 +3,11 @@ import { NgbRatingConfig } from "@ng-bootstrap/ng-bootstrap";
 import { StarRatingModule } from "angular-star-rating";
 import { Router } from "@angular/router";
 import { MovieserviceService } from "../movieservice.service";
-// import the db which has the movie data
+
+// importing the db which has the movie data
 import * as data from "../../db.json";
 
+// DEFINED CLASS TO GET ALL THE DATA OF THE MOVIES
 export class MOVIELIST {
   Sno: string;
   Moviename: string;
@@ -22,8 +24,7 @@ export class MOVIELIST {
 export class MovieslistComponent implements OnInit {
   start;
   end;
-  dataofmovies: MOVIELIST[] = [];
-
+  dataofmovies: MOVIELIST[] = []; // HOLDS 9 MOVIES AT FIRST
   Moviesvar: any[] = []; //VARIABLE ARRAY THAT HOLDS THE MOVIES LIST
   constructor(
     private router: Router,

@@ -2,14 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbRatingConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { MovieserviceService } from '../movieservice.service';
+// importing the db which has the movie data
 import * as data from '../../db.json';
 
+// DEFINED CLASS TO GET DATA OF FEATURED MOVIES THE MOVIES 
 export class MOVIELIST{
-  Sno:string;
   Moviename:string;
   Starrating:any;
-  year:string;
-  isfeatured:string
 }
 
 @Component({
@@ -22,7 +21,7 @@ export class MovieInfoComponent implements OnInit {
   Movienamevar;
   Ratingsvar;
   constructor(private router:Router,config: NgbRatingConfig, private Movieservice: MovieserviceService) {
-    // FOR STARS
+    // FIXING THE MAXIMUM STAR RATINGS
     config.max = 5;
     config.readonly = true;
    }
@@ -31,29 +30,17 @@ export class MovieInfoComponent implements OnInit {
     // TO GET THE DETAILS OF SLECTED MOVIE CARD
 this.Movienamevar=this.Movieservice.moviename
 this.Ratingsvar=this.Movieservice.Rating;
-this.slides = this.chunk(this.FeaturedDataofMovies, 3);
+
 for(const e in data.Sheet1){
   const ob=new MOVIELIST();
-  if(data.Sheet1[e].isFeatured== "TRUE"){
-  ob.Sno=data.Sheet1[e].Sno;
+  if(data.Sheet1[e].isFeatured== "TRUE"){   //TO SELECT ONLY FEATURED MOVIES
   ob.Moviename=data.Sheet1[e].Moviename;
   ob.Starrating=data.Sheet1[e].Starrating;
-  ob.year=data.Sheet1[e].Year;
-  ob.isfeatured=data.Sheet1[e].isFeatured
   this.FeaturedDataofMovies.push(ob)
   }
 }
 
 }
-// FOR carousel
-  slides: any = [[]];
-  chunk(arr, chunkSize) {
-    let R = [];
-    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
-      R.push(arr.slice(i, i + chunkSize));
-    }
-    return R;
-  }
 
   // NAVIGATING BUTTONS
   back(){
