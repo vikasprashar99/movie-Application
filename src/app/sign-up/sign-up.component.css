@@ -26,7 +26,7 @@ background-color: #FFDE72;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 28%;
-    height: 40%;
+    height: auto;
   }
   .form-field{
       width: 100%;
@@ -36,9 +36,8 @@ background-color: #FFDE72;
 /* MEDIA QUERY FOR SIGNUP FORM */
 @media   (max-width: 850px) {
     .sub-container {
-  
         width: auto;
-     
+        height: auto;
+
       }
-  
   }

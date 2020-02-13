@@ -28,7 +28,7 @@ background-color: #FFDE72;
   padding:75px;
   border-top: 10px;
 }
-.carousel-indicators {
+carousel-indicators {
   display: none !important;
 }
 /* *********************************************************************************************************** */
